@@ -1,6 +1,7 @@
 package com.java.books.resource;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,8 @@ public interface Resource<T> {
 	public ResponseEntity<Collection<T>> findAll();
 	
 	@GetMapping("{id}")
-	public ResponseEntity<T> findById(@PathVariable Long id);
-	
+	public ResponseEntity<Optional<T>> findById(@PathVariable Long id);
+
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<T> save(@RequestBody T t);
 	

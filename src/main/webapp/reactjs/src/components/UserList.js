@@ -151,5 +151,4 @@ class UserList extends Component {
         )
     }
 }
-
 export default UserList
